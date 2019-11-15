@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.show {/*舞台区域*/
+			perspective: 1000px;/*透视距离*/
+			position: absolute;
+			width: 700px;
+			height: 700px;
+			top: 50%;
+			left: 50%;
+			margin-left: -350px;
+			margin-top: -350px;
+		}
+		/*盒子容器*/
+		.box {
+			transform-style: preserve-3d;/*设置变形方式为3D变形 （产生立体的效果 变形在立体空间内变形）*/
+			position: absolute;
+			width: 450px;
+			height: 450px;
+			top: 50%;
+			left: 50%;
+			margin-top: -225px;
+			margin-left: -225px;
+			transform: rotateX(20deg) rotateY(-40deg) rotateZ(-10deg); /*为了方便观察，添加的旋转变形*/
+		}
+		/*盒子每个面的公共设置*/
+		.face {
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			top: 50%;
+			left: 50%;
+			margin-left: -75px;
+			margin-top: -75px;
+			/*transition: 2s linear;变形过度时间2秒，匀速变形*/
+			background: currentcolor;/*背景颜色为 相应每个面的colol颜色 currentcolor 是当前color属性的值*/
+			/*font-size: 84px;字体设置
+			text-align: center;
+			line-height: 150px;
+			color: #fff;*/
+		}
+		.box:hover .face {
+			box-shadow: 0 0 30px currentcolor;/*给每个面添加阴影，使用的是每个面的color颜色（水平平移 垂直平移 范围 颜色）*/
+		}
+		.face1 {
+			color: green;
+			transform: translateZ(75px);
+		}
+		.face2 {
+			color: yellow;
+			transform: rotateY(.5turn) translateZ(75px);
+		}
+		.face3 {
+			color: orange;
+			transform: rotateY(.25turn) translateZ(75px);
+		}
+		.face4 {
+			color: pink;
+			transform: rotateY(-.25turn) translateZ(75px);
+		}
+		.face5 {
+			color: blue;
+			transform: rotateX(-90deg) translateZ(75px);
+		}
+		.face6 {
+			color: red;
+			transform: rotateX(90deg) translateZ(75px);
+		}
+		
+		.f {
+			position: absolute;
+			width: 450px;
+			height: 450px;
+			top: 50%;
+			left: 50%;
+			margin-left: -225px;
+			margin-top: -225px;
+			transition: 2s linear;/*变形过度时间2秒，匀速变形*/
+			background: currentcolor;
+			color: gray;
+			opacity: .5;
+		}
+		.box:hover .face {
+			box-shadow: currentcolor;/*给每个面添加阴影，使用的是每个面的color颜色（水平平移 垂直平移 范围 颜色）*/
+		}
+		.f1 {
+			transform: translateZ(225px);
+		}
+		.f2 {
+			transform: rotateY(.5turn) translateZ(225px);
+		}
+		.f3 {
+			transform: rotateY(.25turn) translateZ(225px);
+		}
+		.f4 {
+			transform: rotateY(-.25turn) translateZ(225px);
+		}
+		.f5 {
+			transform: rotateX(-90deg) translateZ(225px);
+		}
+		.f6 {
+			transform: rotateX(90deg) translateZ(225px);
+		}
+		.box:hover .f1 {
+			transform: translateZ(325px);
+		}
+		.box:hover .f2 {
+			transform: rotateY(.5turn) translateZ(325px);
+		}
+		.box:hover .f3 {
+			transform: rotateY(.25turn) translateZ(325px);
+		}
+		.box:hover .f4 {
+			transform: rotateY(-.25turn) translateZ(325px);
+		}
+		.box:hover .f5 {
+			transform: rotateX(-.25turn) translateZ(325px);
+		}
+		.box:hover .f6 {
+			transform: rotateX(.25turn) translateZ(325px);
+		}
+	</style>
+</head>
+<body>
+	<div class="show">
+		<div class="box">
+			<div class="face face1"></div>
+			<div class="face face2"></div>
+			<div class="face face3"></div>
+			<div class="face face4"></div>
+			<div class="face face5"></div>
+			<div class="face face6"></div>
+
+			<div class="f f1"></div>
+			<div class="f f2"></div>
+			<div class="f f3"></div>
+			<div class="f f4"></div>
+			<div class="f f5"></div>
+			<div class="f f6"></div>
+		</div>
+	</div>
+</body>
+</html>
